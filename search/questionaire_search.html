@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <p>JSON/Atom Custom Search API Example</p>
+    
+    <body>
+    <div id="content"></div>
+    <script>
+      document.write("test");
+      function hndlr(response) {
+        document.write(response.items.length);
+      for (var i = 0; i < response.items.length; i++) {
+        var item = response.items[i]
+        // in production code, item.htmlTitle should have the HTML entities escaped.
+        document.getElementById("content").innerHTML += "<br>" + item.htmlTitle;
+        document.write(item.link);
+      }
+    }
+    </script>
+    <script src='https://www.googleapis.com/customsearch/v1?key=AIzaSyBjlT7bKdnZ0ydSlxZ5Al1UIJHyTPZnE9w&amp;cx=000458029060823693019:rufl7axsp9k&amp;q=vegan+cheap+free&ampdelivery&amp;callback=hndlr'>
+    </script>
+  </body>
+  </head>
+  </html>
