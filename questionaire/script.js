@@ -19,8 +19,35 @@ $(document).ready(function(){
   let price = '';
   let neighborhood = ''
   queryArray.forEach(function(q){
+    if (q == 1){
+      price = '1';
+    }
+    if (q == 2){
+      price = '2';
+    }
+    if (q == 3){
+      price = '3';
+    }
     if (q == 'Vegan/Vegetarian'){
-      category
+      category = '4bf58dd8d48988d1d3941735';
+    }
+    if (q == 'Gluten-free'){
+      category = '4c2cd86ed066bed06c3c5209';
+    }
+    if (q == 'Kosher'){
+      category = '52e81612bcbc57f1066b79fc';
+    }
+    if (q == 'Inman Square'){
+      neighborhood = '42.22, 71.63';
+    }
+    if (q == ' Porter Square'){
+      neighborhood = '42.38, 71.11';
+    }
+    if (q == 'Harvard Square'){
+      neighborhood = '42.37, 71.11';
+    }
+    if (q == 'Central Square'){
+      neighborhood = '43.28, 76.14';
     }
 
   })
