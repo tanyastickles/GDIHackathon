@@ -1,0 +1,86 @@
+<div id="pageWrapper">
+  <div id="pageMasthead" class="pageSection"></div>
+  
+  <div id="pageContentArea" class="pageSection">
+		<h2>Type Restaurant Name</h2>
+		<div id="sampleSiteSearch"></div>
+	</div>
+</div>
+<script>
+  window.pushHistory = true;
+
+var myCallback = function() {
+  if (document.readyState == 'complete') { // Document is ready when CSE element is initialized
+    createCSEFeature();
+  } else { // Document is not ready yet, when CSE element is initialized
+    google.setOnLoadCallback(function() {
+        createCSEFeature();
+    }, true);
+  }
+};
+
+var createCSEFeature = function(){
+	var mySearchTerm = getParameterByName("q");	
+	mySearchTerm = ((mySearchTerm === "") ? "" : mySearchTerm);
+	window.searchControl = new google.search.CustomSearchControl('003356674213269822627:4po-e597mzi');
+  searchControl.draw('sampleSiteSearch');
+	if (mySearchTerm !== ""){
+		var stateObject = { q : "panera" };
+		searchControl.execute(mySearchTerm);
+	} else {
+		var stateObject = null;
+	}
+	searchControl.setSearchCompleteCallback({}, function() {
+		mySearchTerm = searchControl.getInputQuery();
+		if (mySearchTerm !== ""){
+			var stateObject = { q : mySearchTerm};
+			if (window.pushHistory === true){
+				handleHistory(mySearchTerm, stateObject);
+			}
+		} else {
+			stateObject = null;
+		}
+		window.pushHistory = true;
+	});
+};
+
+var handleHistory = function(searchTerm, stateObject){	
+	if (searchTerm !== ""){
+   		history.pushState(stateObject, document.title,window.location.protocol + "//" + window.location.host + window.location.pathname + '?q=' + searchTerm);
+		console.log("Fire DL event"); // Fire GTM DL event
+	}
+};
+
+window.onpopstate = function(e) {
+	window.pushHistory = false;
+	if (e.state){
+		var mySearchTerm = e.state.q;
+		searchControl.execute(mySearchTerm);
+	} else {
+		searchControl.clearAllResults();
+	}
+};
+
+var getParameterByName = function(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+
+// Insert it before the CSE code snippet so that cse.js can take the script parameters, like parsetags, callbacks.
+window.__gcse = {
+  parsetags: 'explicit',
+  callback: myCallback
+};
+
+(function() {
+  var cx = '003356674213269822627:4po-e597mzi'; // Insert your own Custom Search engine ID here
+  var gcse = document.createElement('script'); gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+})();
+
+</script>
