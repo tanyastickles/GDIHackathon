@@ -7,6 +7,7 @@ A website that connects users to restaurants in Cambridge, MA
 based on their chosen preferences.
 
 ## Installation
+Run indexmain.html!
 
 ## Built With
 * [bootstrap](https://getbootstrap.com/)
@@ -17,3 +18,4 @@ based on their chosen preferences.
 Stephanie, Jasmine, Deepa, Divya, Sai, Tanya
 
 ## License
+MIT
