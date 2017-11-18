@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 5%;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+	text-align: right;
+	width: 100%;
+	padding: 1%;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.left {
+	background-color: none;
+	border:none;
+}
+
+.right {
+	background-color: none;
+}
+
+h1 {
+	text-align: center;
+	font-size: 110px;
+	padding: 10% 0 0 0;
+	font-family: 'Shadows Into Light Two', cursive;
+	color: #003300;
+}
+
+h2 {
+	
+	font-size: 60px;
+}
+
+h3 {
+	text-align: center;
+	padding-bottom: 10%;
+	color: black;
+}
+
+.btn-sm {
+	color: white;
+	background-color: #BCB49F;
+	border: none;
+}
+
+.btn-sm:hover { 
+    background-color: #8EA466;
+}
+
+.btn-lg {
+	padding: 2.5rem 11rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: .3rem;
+    color: white;
+    border-color: #BCB49F;
+    background-color: 
+}
+
+.btn-lg:hover { 
+    background-color: #8EA466;
+    border: none;
+}
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/*video code start*/
+video#bgvid { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url("The_Cucumber/The_Cucumber.jpg") no-repeat;
+    background-size: cover; 
+}
+
+video {
+  object-fit:inherit;
+}
+/*video code end*/

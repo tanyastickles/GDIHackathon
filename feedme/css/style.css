@@ -1,0 +1,39 @@
+.price {
+  align-items: center;
+}
+
+.cuisine {
+  align-items: center;
+}
+
+.row {
+  padding-top: 20px;
+  padding-left: 30px;
+}
+
+.submitButton{
+  align-items: right;
+}
+
+.btn {
+  background-color: #8EA466;
+  color: #F9F4E6;
+  height: 3em !important;
+}
+
+.selected {
+  background-color: #76845C;
+}
+
+
+
+body {
+  /* background-color: #F9F4E6 */
+
+  background: #FFCE46; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#FFEAC4, #F0B165); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#FFEAC4, #F0B165); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#FFEAC4, #F0B165); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#FFEAC4, #F0B165); /* Standard syntax (must be last) */
+
+}
